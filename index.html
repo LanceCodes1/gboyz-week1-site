@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- this line is what makes the page behave on phones instead of showing a tiny zoomed-out desktop version -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G Boyz Wire Wheels - Custom Wire Wheels, Bell Gardens, CA</title>
+  <!-- pulls in the CSS file so all the styling below actually applies -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!--
+    HEADER / HERO
+    This is the first thing a visitor sees. It has to say what the shop is,
+    where it is, and why it's trustworthy (25 years) within one glance,
+    plus a single obvious action (call to order) since there is no cart.
+  -->
+  <header class="hero">
+    <h1>G Boyz Wire Wheels</h1>
+    <p class="hero-subhead">Custom Wire Wheels, Bell Gardens, CA</p>
+    <p class="hero-description">25 years of custom wire wheel craftsmanship for the lowrider community.</p>
+    <!-- "tel:" is what makes this a real phone link on mobile - tap it and it opens the dialer -->
+    <a href="tel:+13235550199" class="cta-button">Call to Order</a>
+  </header>
+
+  <!--
+    ABOUT / STORY SECTION
+    Explains the 25-year, word-of-mouth reputation. This is the trust-building
+    section - it exists to answer "who are these guys and why should I trust
+    them with my wheels" before the visitor ever sees a product or a price.
+  -->
+  <section class="about" id="about">
+    <h2>Our Story</h2>
+    <p>
+      For 25 years, G Boyz Wire Wheels has built custom wire wheels for the
+      lowrider community right here in Bell Gardens, California. We didn't
+      grow through ads or flashy marketing - we grew one car show, one
+      cruise, and one word-of-mouth referral at a time. Our reputation was
+      built by riders who trusted us with their rides and told their
+      friends. That same commitment to quality and craftsmanship is what
+      keeps customers coming back generation after generation.
+    </p>
+  </section>
+
+  <!--
+    GALLERY / WHAT WE MAKE SECTION
+    Gives visitors a visual sense of the product since photos sell wire
+    wheels better than words. Placeholder images stand in for real shop
+    photos until they're ready to be swapped in.
+  -->
+  <section class="gallery" id="gallery">
+    <h2>What We Make</h2>
+    <!-- this div is the shelf all three photos sit on - the CSS grid rule on it decides how they line up -->
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <!-- CSS-only box standing in for a real photo later - no external image request, so it always shows up even offline -->
+        <div class="placeholder-box">Classic Wire Wheel</div>
+        <figcaption>Classic Wire Wheels</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <div class="placeholder-box">Chrome Finish</div>
+        <figcaption>Chrome Finishes</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <div class="placeholder-box">Custom Build</div>
+        <figcaption>Custom Builds</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!--
+    CONTACT / HOW TO ORDER SECTION
+    There's no online checkout, so this section exists to set that
+    expectation clearly and give visitors the two real ways to order:
+    phone call or Instagram DM. Repeats the CTA button here since this
+    is where a visitor decides to actually reach out.
+  -->
+  <section class="contact" id="contact">
+    <h2>How to Order</h2>
+    <p>
+      We don't have online checkout - custom wire wheels are ordered the
+      way they've always been ordered around here: over the phone or
+      through a direct message. Call us or hit us up on Instagram to talk
+      sizes, finishes, and pricing for your build.
+    </p>
+    <div class="contact-details">
+      <p><strong>Phone:</strong> <a href="tel:+13235550199">(323) 555-0199</a></p>
+      <!-- target="_blank" opens Instagram in a new tab so tapping it doesn't lose this page; rel="noopener" is a small security habit that stops the new tab from messing with this one -->
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/gboyzwirewheels" target="_blank" rel="noopener">@gboyzwirewheels</a></p>
+    </div>
+    <!-- same tel: link repeated here since this is the moment someone's ready to actually call -->
+    <a href="tel:+13235550199" class="cta-button">Call to Order</a>
+  </section>
+
+  <!--
+    FOOTER
+    Basic closing credit line so the page doesn't end abruptly after the
+    contact section.
+  -->
+  <footer class="site-footer">
+    <p>&copy; 2026 G Boyz Wire Wheels &mdash; Bell Gardens, CA</p>
+  </footer>
+
+</body>
+</html>

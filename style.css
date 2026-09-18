@@ -1,0 +1,253 @@
+/*
+  GLOBAL / RESET
+  Sets the dark, industrial base look (near-black background, light text,
+  bold condensed font) that every section inherits, so individual
+  sections only need to override color accents, not re-declare basics.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  /* without this, padding/borders add extra size on top of an element's width instead of inside it - this keeps sizing predictable */
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d0d0d;
+  color: #e6e6e6;
+  font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: "Impact", "Arial Black", "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+a {
+  color: inherit;
+}
+
+/*
+  CTA BUTTON
+  One shared style for the "Call to Order" button (used in the hero and
+  again in the contact section) so the action always looks identical and
+  instantly recognizable as "the thing to click."
+*/
+.cta-button {
+  /* makes the link act like a button/box instead of just underlined text */
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.9rem 2.2rem;
+  /* this is the gold "metallic" look - a gradient fading from lighter gold to darker gold, like light hitting metal */
+  background: linear-gradient(180deg, #d4af37, #a8791f);
+  color: #0d0d0d;
+  font-family: "Impact", "Arial Black", sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 2px solid #c0c0c0;
+  border-radius: 4px;
+  /* tells the browser to animate the hover changes below smoothly instead of snapping instantly */
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cta-button:hover {
+  /* nudges the button up slightly on hover so it feels clickable/alive */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4);
+}
+
+/*
+  HERO / HEADER
+  Full-width dark banner with a chrome-to-gold gradient rule underneath
+  to establish the automotive/chrome visual theme immediately.
+*/
+.hero {
+  text-align: center;
+  padding: 4rem 1.5rem 3rem;
+  background-color: #111111;
+  /* border-bottom just turns the bottom edge on; border-image is what actually paints it with the silver-gold-silver stripe */
+  border-bottom: 4px solid;
+  border-image: linear-gradient(90deg, #c0c0c0, #d4af37, #c0c0c0) 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #f0f0f0;
+  text-shadow: 0 0 12px rgba(192, 192, 192, 0.4);
+}
+
+.hero-subhead {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero-description {
+  max-width: 40rem;
+  margin: 1rem auto 0;
+  color: #b3b3b3;
+  font-size: 1.05rem;
+}
+
+/*
+  SHARED SECTION SPACING
+  Every content section (about, gallery, contact) gets consistent
+  padding and a max content width so the page reads as one coherent
+  layout instead of three unrelated blocks.
+*/
+section {
+  padding: 3.5rem 1.5rem;
+  /* caps how wide the text/content can stretch, so it doesn't run edge-to-edge on huge monitors */
+  max-width: 60rem;
+  /* "0 auto" is the classic trick for centering a block horizontally on the page */
+  margin: 0 auto;
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #c0c0c0;
+  margin-bottom: 1.2rem;
+  border-left: 4px solid #d4af37;
+  padding-left: 0.75rem;
+}
+
+/*
+  ABOUT SECTION
+  Plain readable text block - kept simple on purpose since this section's
+  job is storytelling, not visual flash.
+*/
+.about p {
+  color: #cfcfcf;
+  max-width: 45rem;
+}
+
+/*
+  GALLERY SECTION
+  Responsive grid of placeholder image cards. Uses auto-fit so it
+  collapses cleanly from 3 columns down to 1 on small screens without
+  a separate mobile-only rule.
+*/
+.gallery-grid {
+  display: grid;
+  /* think of this like shelves that automatically add or remove columns to fit the screen - each shelf slot is at least 220px, and auto-fit is what makes it drop to fewer columns on narrow screens */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  background-color: #161616;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* CSS-only stand-in for a real photo - no network request, so it never breaks or fails to load */
+.placeholder-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* aspect-ratio keeps the box a consistent 3:2 shape at any width, like the photos would be */
+  aspect-ratio: 3 / 2;
+  background-color: #1a1a1a;
+  border: 2px solid #d4af37;
+  color: #c0c0c0;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.gallery-item figcaption {
+  padding: 0.75rem;
+  color: #d4af37;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+/*
+  CONTACT SECTION
+  Highlights the phone/Instagram details in a bordered box so they stand
+  out as the key takeaway action items on the page.
+*/
+.contact p {
+  color: #cfcfcf;
+  max-width: 45rem;
+}
+
+.contact-details {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background-color: #161616;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.contact-details p {
+  margin: 0.3rem 0;
+  color: #e6e6e6;
+}
+
+.contact-details a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+/*
+  FOOTER
+  Minimal closing bar, dimmed so it doesn't compete with the CTA above it.
+*/
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #666666;
+  font-size: 0.85rem;
+  border-top: 1px solid #222222;
+}
+
+/*
+  MOBILE RESPONSIVENESS
+  Scales down the oversized headline and tightens spacing so the page
+  doesn't feel cramped or oversized on phone screens.
+*/
+/* everything inside here only kicks in when the screen is 600px wide or less - basically "phone mode" */
+@media (max-width: 600px) {
+  .hero {
+    padding: 3rem 1rem 2rem;
+  }
+
+  /* the huge 3rem headline from before would look oversized and cramped on a phone, so shrink it here */
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-subhead {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 2.5rem 1rem;
+  }
+
+  section h2 {
+    font-size: 1.6rem;
+  }
+
+  /* on desktop this box only takes up as much width as it needs (inline-block); on phone we make it a full-width block so the phone number/Instagram text has more room to wrap */
+  .contact-details {
+    display: block;
+  }
+}
