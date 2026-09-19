@@ -54,3 +54,14 @@ myself instead of just accepting it.
 **Why:** Spec calls for one CTA button; index.html had two (hero + contact section).
 
 **Result:** Removed the duplicate button. It also flagged two comments (in index.html and style.css) that still described two buttons — had it update those too, so the code and its own comments agree.
+
+## Entry 6 — 09/18/2026
+
+**Tool:** Claude Code
+
+**Prompt:** Move the Call to Order button out of the hero and place it at the end of the contact section, after the Instagram link. Remove it from the hero, keep everything else the same.
+
+**Why:** Wanted the CTA next to the phone/Instagram info as originally planned, not in the hero.
+
+**Result:** Moved the button and its tel: comment. It flagged three other comments still describing the old hero button layout and updated those too, then checked the hero's spacing with headless screenshots before I confirmed visually myself in DevTools.
+
